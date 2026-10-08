@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gokhan Asan — Technical Operations & Business Development</title>
+<meta name="description" content="Gokhan Asan, Dublin. Technical operations and business development specialist who builds his own software: Roxpos, Rolltech, Yatsan CRM, GFC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#EEF2F5; --paper:#FFFFFF; --ink:#14213D; --slate:#5B6B7F;
+  --signal:#F2B705; --line:#D5DDE5; --signal-ink:#14213D;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --sky:#0F1A2E; --paper:#16243D; --ink:#E6ECF2; --slate:#9AAABD; --line:#26385A;
+  }
+}
+:root[data-theme="dark"]{--sky:#0F1A2E;--paper:#16243D;--ink:#E6ECF2;--slate:#9AAABD;--line:#26385A;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--sky);color:var(--ink);
+  font:400 1.0625rem/1.6 "Barlow",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:2px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;line-height:1.05;margin:0}
+h2{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:700;margin-bottom:1.5rem}
+section{padding:4rem 0;border-top:1px solid var(--line)}
+p{max-width:38rem}
+
+/* hero */
+.hero{display:grid;gap:2.5rem;padding:3.5rem 0 4rem;align-items:center}
+@media(min-width:860px){.hero{grid-template-columns:1.1fr 1fr}}
+.hero h1{font-size:clamp(3rem,9vw,5.5rem);font-weight:700;letter-spacing:-.01em}
+.hero .role{font-size:1.25rem;color:var(--slate);margin:.75rem 0 1.5rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.7rem 1.2rem;font-weight:600;text-decoration:none;border:2px solid var(--ink);border-radius:4px}
+.btn.primary{background:var(--signal);border-color:var(--signal);color:var(--signal-ink)}
+
+/* boarding pass — the one bold element */
+.pass{background:var(--paper);border-radius:14px;display:grid;grid-template-columns:1fr auto;
+  box-shadow:0 1px 0 var(--line);border:1px solid var(--line);overflow:hidden}
+.pass-main{padding:1.5rem 1.5rem 1.25rem}
+.pass-stub{background:var(--signal);color:var(--signal-ink);padding:1.5rem 1rem;
+  writing-mode:vertical-rl;font:700 1.15rem "Barlow Condensed",sans-serif;
+  display:flex;align-items:center;justify-content:center;border-left:2px dashed var(--signal-ink)}
+.route{display:flex;align-items:center;gap:1rem;margin:.25rem 0 1.25rem}
+.route b{font:700 3.2rem/1 "Barlow Condensed",sans-serif}
+.route .plane{flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--slate) 0 6px,transparent 6px 12px);position:relative}
+.route .plane::after{content:"✈";position:absolute;right:-4px;top:-.8rem;font-size:1.1rem;color:var(--ink)}
+.route small{display:block;font-size:.8rem;color:var(--slate);font-family:"Barlow",sans-serif}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 1.25rem;margin:0}
+.fields dt{font-size:.8rem;color:var(--slate)}
+.fields dd{margin:0;font-weight:600}
+
+/* projects */
+.projects{display:grid;gap:0}
+.project{display:grid;gap:.5rem 2rem;padding:1.75rem 0;border-bottom:1px solid var(--line)}
+.project>div{min-width:0}
+.project{grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.project{grid-template-columns:14rem minmax(0,1fr)}}
+.project h3{font-size:2rem;font-weight:700}
+.project .kind{color:var(--slate);font-size:.95rem;margin-top:.25rem}
+.project p{margin:0 0 .75rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:0 0 .75rem;list-style:none}
+.tags li{font-size:.85rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:999px;background:var(--paper)}
+.todo{background:color-mix(in srgb,var(--signal) 25%,transparent);padding:0 .3rem;border-radius:3px}
+.project a{font-weight:600}
+
+/* experience timeline: a real sequence */
+.timeline{list-style:none;padding:0;margin:0}
+.timeline li{display:grid;gap:.25rem 2rem;padding:1.25rem 0;border-bottom:1px solid var(--line)}
+@media(min-width:760px){.timeline li{grid-template-columns:14rem 1fr}}
+.timeline time{font:600 1.15rem "Barlow Condensed",sans-serif;color:var(--slate)}
+.timeline h3{font-size:1.4rem;font-weight:600}
+.timeline p{margin:.35rem 0 0;color:var(--slate)}
+
+.two{display:grid;gap:2.5rem}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr}}
+.plain{list-style:none;padding:0;margin:0}
+.plain li{padding:.6rem 0;border-bottom:1px solid var(--line)}
+.plain strong{display:block}
+.plain span{color:var(--slate);font-size:.95rem}
+
+
+.gallery{display:flex;gap:.75rem;overflow-x:auto;padding:.25rem 0 1rem;margin-bottom:.5rem;scroll-snap-type:x mandatory}
+.gallery img{scroll-snap-align:start;border-radius:12px;border:1px solid var(--line);background:var(--paper);display:block}
+.gallery.phones img{width:10.5rem;height:auto;flex:0 0 auto;border-radius:20px}
+.shot{margin:0 0 1rem}
+.shot img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block}
+.shot figcaption,.gallery-cap{font-size:.85rem;color:var(--slate);margin-top:.4rem}
+.duo{display:grid;grid-template-columns:1fr 26%;gap:.75rem;align-items:end;margin:0 0 .75rem}
+.duo img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+.duo img.phone{border-radius:18px}
+footer{padding:4rem 0 3rem;border-top:1px solid var(--line)}
+footer h2{margin-bottom:.75rem}
+footer .actions{margin-top:1.5rem}
+.fine{color:var(--slate);font-size:.9rem;margin-top:2.5rem}
+
+@media (prefers-reduced-motion:no-preference){
+  .pass{animation:board .7s ease-out both}
+  @keyframes board{from{transform:translateY(12px);opacity:0}to{transform:none;opacity:1}}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<header class="hero">
+  <div>
+    <h1>Gokhan Asan</h1>
+    <p class="role">I connect technology and business: ten years of IT, B2B sales and operations, plus software I design and ship myself.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="mailto:gokhan.asan35@gmail.com">Email me</a>
+    </div>
+  </div>
+
+  <article class="pass" aria-label="Career summary styled as a boarding pass">
+    <div class="pass-main">
+      <div class="route">
+        <div><b>IST</b><small>Istanbul, 2021</small></div>
+        <span class="plane" aria-hidden="true"></span>
+        <div><b>DUB</b><small>Dublin, today</small></div>
+      </div>
+      <dl class="fields">
+        <div><dt>Passenger</dt><dd>Gokhan Asan</dd></div>
+        <div><dt>Class</dt><dd>Tech + Business</dd></div>
+        <div><dt>Based in</dt><dd>Dublin, Ireland</dd></div>
+        <div><dt>Work status</dt><dd>Stamp 4, no sponsorship</dd></div>
+        <div><dt>Certified by</dt><dd>Microsoft, IBM</dd></div>
+        <div><dt>Gate</dt><dd>Open to new roles</dd></div>
+      </dl>
+    </div>
+    <div class="pass-stub" aria-hidden="true">BOARDING</div>
+  </article>
+</header>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+
+    <article class="project">
+      <div><h3>RoxPos</h3><div class="kind">Cloud POS for restaurants, cafes and shops</div></div>
+      <div>
+        <p>A point-of-sale platform that runs in the browser on any computer, tablet or phone, with no installation or special hardware. Venues manage tables and checks, a QR menu in eight languages with ordering and waiter calls, stock that is deducted by recipe when a check closes, reservations, several branches, staff shifts and live reports.</p>
+        <p>It connects to Turkey's main delivery platforms and fiscal payment terminals, so online orders and card payments flow straight into the till. A kitchen display, AI forecasting and a subscription model with a free trial are part of the product.</p>
+        <figure class="shot"><div class="duo" style="margin:0"><img src="img/00.webp" alt="roxpos.ie home page on desktop" width="1100" height="688" loading="lazy"><img class="phone" src="img/09.webp" alt="roxpos.ie home page on mobile" width="390" height="844" loading="lazy"></div></figure>
+        <figure class="shot"><img src="img/01.webp" alt="RoxPos Restaurant POS Software page" width="1100" height="688" loading="lazy"><figcaption>The live site at roxpos.ie: home page on desktop and mobile, and the Restaurant POS Software page.</figcaption></figure>
+        <ul class="tags"><li>SaaS</li><li>Cloud POS</li><li>Integrations</li><li>8 languages</li><li>Subscription business</li></ul>
+        <a href="https://roxpos.ie/en/" target="_blank" rel="noopener">Visit roxpos.ie</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <div><h3>Rolltech</h3><div class="kind">B2B store for industrial castors and components</div></div>
+      <div>
+        <p>A B2B catalogue and ordering site that supplies castors, wheels and machine components from Türkiye to customers in Ireland, the UK and Europe. Buyers filter the range by load, fitting and environment, check requirements in a technical centre with a load calculator, and send one structured quote request with drawings or photos.</p>
+        <p>Behind the catalogue sits an operations portal for sales, procurement, inventory, warehouse barcode scanning, logistics and finance. The site runs in twelve languages. It brings together my industrial sales years and my software work.</p>
+        <div class="duo"><img src="img/02.webp" alt="rolltech.ie home page on desktop" width="1100" height="688" loading="lazy"><img class="phone" src="img/10.webp" alt="rolltech.ie home page on mobile" width="390" height="844" loading="lazy"></div>
+        <figure class="shot"><img src="img/03.webp" alt="Rolltech Technical Centre with the castor load capacity calculator" width="1100" height="688" loading="lazy"><figcaption>The live site at rolltech.ie: home page on desktop and mobile, and the Technical Centre with the load calculator.</figcaption></figure>
+        <ul class="tags"><li>B2B e-commerce</li><li>Product finder</li><li>RFQ workflow</li><li>Operations portal</li><li>Design system</li><li>12 languages</li></ul>
+        <a href="https://rolltech.ie/" target="_blank" rel="noopener">Visit rolltech.ie</a>
+      </div>
+    </article>
+
+    
+
+    <article class="project">
+      <div><h3>Yatsan CRM</h3><div class="kind">Operations portal for the Yatsan store in Bayraklı, Izmir</div></div>
+      <div>
+        <p>The store's whole sales cycle in one place: customers, price quotes, orders, deliveries, technical service, invoicing and collections. Each day opens with a "today" view: alerts for anything late, the next seven days of deliveries and payments, a shared to-do list and a live activity feed from every device in the store.</p>
+        <p>Staff log in with their own accounts and permissions, and everyone works on one live cloud database. Reports cover monthly sales, best sellers, gross profit against unit cost and card instalments by bank, with a switch to hide sensitive figures on screen. A catalogue of nearly 1,200 products tracks stock, deliveries are planned by region and exported in the manufacturer's format, invoices are reconciled against the manufacturer's billing, and years of past sales were imported from Excel. On phones it becomes a mobile app with a quick "new sale" button.</p>
+        <div class="duo"><img src="img/04.webp" alt="Yatsan portal today view on desktop with demo data" width="1100" height="688" loading="lazy"><img class="phone" src="img/11.webp" alt="Yatsan portal today view on mobile with demo data" width="390" height="844" loading="lazy"></div>
+        <figure class="shot"><img src="img/05.webp" alt="Yatsan portal order list with demo data" width="1100" height="688" loading="lazy"><figcaption>Today view on desktop and mobile, and the order list, shown in English. All customers, orders and figures are demo data.</figcaption></figure>
+        <ul class="tags"><li>CRM</li><li>Retail operations</li><li>Live cloud sync</li><li>User roles</li><li>Profit reporting</li><li>Excel import / export</li><li>Mobile-first</li></ul>
+      </div>
+    </article>
+
+    <article class="project">
+      <div><h3>GFC</h3><div class="kind">Member app for Giba Fit Club</div></div>
+      <div>
+        <p>A complete gym platform with three sides: members, coaches and a dietitian. Members book in-person or online lessons, check in with a QR code, log workouts and personal records, track measurements and progress photos, and follow a nutrition plan. Coaches and the dietitian get their own panels to manage members, programs and meal plans.</p>
+        <p>I designed around 80 screens, including package renewals and freezes, payments, messaging, a blog and events, a shareable progress report, Turkish and English versions, and offline and error states.</p>
+        <div class="gallery phones" tabindex="0" aria-label="GFC app screens"><img src="img/06.webp" alt="GFC app: Home screen" width="260" height="563" loading="lazy"><img src="img/07.webp" alt="GFC app: Booking a lesson" width="260" height="563" loading="lazy"><img src="img/08.webp" alt="GFC app: Weekly report card" width="260" height="563" loading="lazy"></div>
+        <ul class="tags"><li>Product design</li><li>Mobile web app</li><li>Vercel</li><li>Google Workspace</li><li>TR / EN</li></ul>
+        <a href="#" class="todo">Live app link — add</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <ol class="timeline" reversed>
+    <li><time>2026 – 2026</time><div><h3>Ryanair DAC, Dublin Airport</h3><p>Ground service agent and ramp operations. Aircraft turnarounds under strict safety and on-time targets.</p></div></li>
+    <li><time>2022 – 2026</time><div><h3>Sky Handling Partner, Dublin Airport</h3><p>Passenger service agent and operations coordinator. Check-in, boarding gates and the escalation point for complex travel-document cases.</p></div></li>
+    <li><time>2014 – 2021</time><div><h3>Yatsan / TEMPUR Mattress, Turkey</h3><p>Business development manager for B2B and corporate accounts. Grew the corporate portfolio with CRM-led account management and ran local Google Business presence.</p></div></li>
+    <li><time>2013 – 2014</time><div><h3>Norm Holding / Standart Fasteners, Turkey</h3><p>Area sales manager in technical and industrial sales, managing a regional distributor network and credit control.</p></div></li>
+    <li><time>2011 – 2013</time><div><h3>Philip Morris International, Turkey</h3><p>IT consultant. Hardware, network and software support for corporate infrastructure.</p></div></li>
+  </ol>
+</section>
+
+<section id="skills">
+  <div class="two">
+    <div>
+      <h2>What I bring</h2>
+      <ul class="plain">
+        <li><strong>Building software</strong><span>Web and mobile apps from idea to a live deployment</span></li>
+        <li><strong>Business development</strong><span>B2B account management, CRM workflows, local digital presence</span></li>
+        <li><strong>Operations</strong><span>High-pressure, SLA-driven environments in aviation and retail</span></li>
+        <li><strong>IT and cloud</strong><span>Systems support, networks, cloud deployments</span></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Certificates</h2>
+      <ul class="plain">
+        <li><strong>Project Management</strong><span>Microsoft</span></li>
+        <li><strong>AI Fundamentals</strong><span>IBM</span></li>
+        <li><strong>Cloud Computing</strong><span>IBM</span></li>
+        <li><strong>Information Technology</strong><span>IBM</span></li>
+        <li><strong>Associate degree, Computer Technology & Software</strong><span>Aegean University Institute of Technology</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>I'm looking for roles where technical skills and business sense both count. English and Turkish.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:gokhan.asan35@gmail.com">gokhan.asan35@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/gokhanasn" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="fine">Also into drones and video, solar and battery systems, and fixing things with my hands.</p>
+  </div>
+</footer>
+</body>
+</html>
